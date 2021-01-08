@@ -22,11 +22,11 @@ class MModel with EventPublisher {
 #### 添加广播事件
 ```
 
- EventBusManager().add<MModel>((event) {
+ BroadcastEventsManager().add<MModel>((event) {
     print('-----${event.name}');
  });
  
- EventBusManager().add<MModel>((event) {
+ BroadcastEventsManager().add<MModel>((event) {
    print('-----${event.name}');
  },tag: '12');
 
@@ -35,15 +35,15 @@ class MModel with EventPublisher {
 #### 移除广播事件
 ```
 
- EventBusManager().off<MModel>();
- EventBusManager().off<MModel>(tag: '12');
+BroadcastEventsManager().off<MModel>();
+BroadcastEventsManager().off<MModel>(tag: '12');
  
 ```
 
 #### 触发广播事件
 ```
 
-EventBusManager().post(MModel(name: 'hahhahha'));
-EventBusManager().post(MModel(name: 'hahhahha'),tag: '12');
+BroadcastEventsManager().post(MModel(name: 'hahhahha'));
+BroadcastEventsManager().post(MModel(name: 'hahhahha'),tag: '12');
 
 ```
